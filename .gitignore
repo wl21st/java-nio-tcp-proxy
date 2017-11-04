@@ -1,0 +1,10 @@
+*.crc
+*.orc
+*.iml
+.DS_store
+target/*
+.idea
+derby.log
+metastore_db/*
+src/generated/*
+/target/
