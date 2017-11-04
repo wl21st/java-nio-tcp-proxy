@@ -108,8 +108,23 @@
                     </archive>
                 </configuration>
             </plugin>
-            <!-- Disable the Shade as it cannot work with hadoop -->
-            <!-- Copy the dependency libraries into target/lib folder. -->
+            <plugin>
+                <groupId>com.jolira</groupId>
+                <artifactId>onejar-maven-plugin</artifactId>
+                <version>1.4.4</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <configuration>
+                            <mainClass>com.github.terma.javaniotcpproxy.TcpProxyRunner</mainClass>
+                            <attachToBuild>true</attachToBuild>
+                        </configuration>
+                        <goals>
+                            <goal>one-jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
             <plugin>
                 <artifactId>maven-dependency-plugin</artifactId>
                 <executions>
